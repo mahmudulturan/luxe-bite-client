@@ -56,9 +56,8 @@ const Navbar = () => {
                         </div>
                     </div>
                     :
-                    <btn className="bg-accentCol text-white font-medium px-4 py-2 rounded-md cursor-pointer">Login</btn>
+                    <button className="bg-accentCol text-white font-medium px-4 py-2 rounded-md cursor-pointer">Login</button>
                 }
-
                 </div>
             </div>
         </div>
