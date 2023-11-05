@@ -15,7 +15,7 @@ const About = () => {
     // console.log();
     return (
         <div>
-            <div className="my-10 max-w-7xl mx-auto p-1 md:p-0">
+            <div className="mb-10 max-w-7xl mx-auto p-1 md:p-0">
                 <Title title="Our Story">The Luxe Bite Experience</Title>
                 <div>
                     <span className="border-b-2 border-primaryCol text-xl font-semibold">Meet the Master Chef</span>
