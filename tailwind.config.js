@@ -10,11 +10,16 @@ export default {
         montserrat: ['Montserrat', 'sans-serif']
       },
       colors: {
-        'textCol': "#081B21",
-        'backgroundCol': "#FFFFFF",
-        'primaryCol': "#FF7029",
-        'secondaryCol': "#B9E1EE",
-        'accentCol': "#B14C2B"
+        'textCol': "#0D0203",
+        'backgroundCol': "#F9DCDD",
+        'primaryCol': "#CF262E",
+        'secondaryCol': "#F3BEC0",
+        'accentCol': "#C2242B",
+        'darkText': "#C2242B",
+        'darkBackground': "#230607",
+        'darkPrimary': "#D93039",
+        'darkSecondary': "#410C0E",
+        'darkAccent': "#DB3D45"
       }
     },
   },

@@ -22,7 +22,7 @@ const Navbar = () => {
     </div>
     return (
         <div>
-            <div className="navbar bg-transparent max-w-7xl mx-auto my-4">
+            <div className="navbar bg-transparent max-w-7xl mx-auto py-4 items-center">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <img className='w-1/6 object-cover' src={logo} alt="" />
+                    <img className='md:w-5/12 object-cover' src={logo} alt="logo fo luxe bite" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -1,12 +1,15 @@
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import {Outlet} from 'react-router-dom'
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="bg-backgroundCol font-montserrat">
             <Header></Header>
-            <h1 className="text-textCol font-montserrat">Hello this is main</h1>
+            <div className="min-h-[66vh]">
             <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
