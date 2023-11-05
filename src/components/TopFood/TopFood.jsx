@@ -13,9 +13,9 @@ const TopFood = () => {
         }
     })
     if (isLoading) {
-        console.log(true);
+        // console.log(true);
     }
-    console.log(data?.data);
+    // console.log(data?.data);
     return (
         <div className="max-w-7xl my-10 mx-auto p-1 md:p-0">
             <Title title="Popular Picks">Tempting Tastes</Title>
