@@ -12,7 +12,6 @@ const About = () => {
             return res;
         }
     })
-    // console.log();
     return (
         <div>
             <div className="mb-10 max-w-7xl mx-auto p-1 md:p-0">
