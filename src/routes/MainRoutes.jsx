@@ -8,10 +8,12 @@ import Contact from "../pages/Contact";
 import FoodDetail from "../pages/FoodDetail";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
+import ErrorPage from "../pages/ErrorPage";
 
 const MainRoutes = createBrowserRouter([
     {
         path: '/',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <MainLayout></MainLayout>,
         children: [
             {

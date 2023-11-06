@@ -2,8 +2,15 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../assets/animations/loginAnimation.json"
 import { Link } from "react-router-dom";
 import Title from "../../components/Shared/Title";
+import Social from "./Social";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from 'react-hot-toast';
+import { updateProfile } from "firebase/auth";
+
 
 const Register = () => {
+    const {singUp} = useContext(AuthContext)
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -11,7 +18,19 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password, photo, name);
+        singUp(email,password)
+        .then((res)=> {
+            const user = res.user;
+            updateProfile(user, {
+                displayName: name,
+                photoURL: photo
+            })
+            toast.success('Successfully Login!')
+        })
+        .catch(error=>{
+            toast.error(error.message)
+
+        })
     }
     return (
         <div className="max-w-7xl min-h-[92vh] mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -49,9 +68,10 @@ const Register = () => {
                     </div>
                 </form>
                 <p>Already have an account? <Link className="text-primaryCol underline" to='/login'>Login Here</Link></p>
+                <Social></Social>
             </div>
             <div className="flex-1">
-             <Lottie animationData={loginAnimation} />;
+             <Lottie animationData={loginAnimation} />
 
             </div>
         </div>

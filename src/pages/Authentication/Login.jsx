@@ -2,14 +2,29 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../assets/animations/loginAnimation.json"
 import { Link } from "react-router-dom";
 import Title from "../../components/Shared/Title";
+import Social from "./Social";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from 'react-hot-toast';
+
 
 const Login = () => {
+    const {signIn} = useContext(AuthContext)
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+        signIn(email,password)
+        .then(()=> {
+            toast.success('Successfully Login!')
+
+        })
+        .catch(error=>{
+            toast.error(error.message)
+
+        })
     }
     return (
         <div className="max-w-7xl min-h-[92vh] mx-auto flex flex-col md:flex-row justify-between items-center py-5">
@@ -35,9 +50,10 @@ const Login = () => {
                     </div>
                 </form>
                 <p>Don't have any account? <Link className="text-primaryCol underline" to='/register'>Register Here</Link></p>
+                <Social></Social>
             </div>
             <div className="flex-1">
-                <Lottie animationData={loginAnimation} />;
+                <Lottie animationData={loginAnimation} />
 
             </div>
         </div>
