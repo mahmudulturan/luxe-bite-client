@@ -5,6 +5,7 @@ import AllFoodItems from "../pages/AllFoodItems";
 import Blogs from "../pages/Blogs";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import FoodDetail from "../pages/FoodDetail";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const MainRoutes = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/all-item/:id',
+                element: <FoodDetail></FoodDetail>
             },
         ]
     }
