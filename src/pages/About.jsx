@@ -1,3 +1,4 @@
+import Loading from "../components/Loading/Loading";
 import Title from "../components/Shared/Title";
 import useAxios from "../hooks/useAxios";
 import { useQuery } from '@tanstack/react-query';
@@ -6,12 +7,15 @@ import { BiLogoFacebookCircle, BiLogoInstagramAlt, BiLogoTwitter, BiLogoLinkedin
 
 const About = () => {
     const axios = useAxios()
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["chef"], queryFn: async () => {
             const res = await axios.get('/chef')
             return res;
         }
     })
+    if(isLoading){
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div className="mb-10 max-w-7xl mx-auto p-1 md:p-0">

@@ -3,17 +3,21 @@ import Title from "../components/Shared/Title";
 import useAxios from "../hooks/useAxios";
 import FoodCard from "../components/FoodCard/FoodCard";
 import { useState } from "react";
+import Loading from "../components/Loading/Loading";
 
 const AllFoodItems = () => {
     const [currentPage, setCurrentPage] = useState(0)
     const [perPageCount, setPerPageCount] = useState(9)
     const axios = useAxios();
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["allfoodItems", currentPage, perPageCount], queryFn: async () => {
             const res = await axios.get(`/all-food-items?page=${currentPage}&limit=${perPageCount}`)
             return res;
         }
     })
+    if(isLoading){
+        return <Loading></Loading>
+    }
     const productsCount = data?.data.count;
     const pageCount = Math.ceil(productsCount/perPageCount)
     const totalButton = [...Array(pageCount || []).keys()]

@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
 import {useParams, Link} from 'react-router-dom'
 import Title from "../components/Shared/Title";
+import Loading from "../components/Loading/Loading";
 
 const FoodDetail = () => {
     const axios = useAxios();
@@ -11,7 +12,7 @@ const FoodDetail = () => {
         return res
     }})
     if(isLoading){
-        return <h1>Loading</h1>
+        return <Loading></Loading>
     }
     const {food_name, food_category, price, made_by, food_origin, short_description, _id} = data.data;
     return (

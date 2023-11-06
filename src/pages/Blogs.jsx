@@ -1,7 +1,11 @@
+import Loading from "../components/Loading/Loading";
+import Title from "../components/Shared/Title";
+
 const Blogs = () => {
     return (
         <div>
-            <h1>Blogs</h1>
+                <Title title="Bite Blog">Savor Stories</Title>
+                <Loading></Loading>
         </div>
     );
 };

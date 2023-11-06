@@ -4,18 +4,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import Loading from "../Loading/Loading";
 
 
 const Testimonial = () => {
     const axios = useAxios();
 
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["testimonials"], queryFn: async () => {
             const res = await axios.get('/testimonials')
             return res;
         }
     })
-    // console.log(data?.data);
+    if(isLoading){
+        return <Loading></Loading>
+    }
 
     return (
         <div>

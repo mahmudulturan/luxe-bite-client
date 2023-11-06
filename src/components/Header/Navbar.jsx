@@ -1,5 +1,5 @@
 import logo from '../../assets/logo_light.png'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BiSolidUserCircle } from "react-icons/bi";
 
 
@@ -56,7 +56,9 @@ const Navbar = () => {
                         </div>
                     </div>
                     :
+                    <Link to="/login">
                     <button className="bg-accentCol text-white font-medium px-4 py-2 rounded-md cursor-pointer">Login</button>
+                    </Link>
                 }
                 </div>
             </div>

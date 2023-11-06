@@ -3,6 +3,7 @@ import Title from "../Shared/Title";
 import { useQuery } from '@tanstack/react-query'
 import FoodCard from "./FoodCard";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 const TopFood = () => {
     const axios = useAxios()
@@ -13,9 +14,8 @@ const TopFood = () => {
         }
     })
     if (isLoading) {
-        // console.log(true);
+        return <Loading></Loading>
     }
-    // console.log(data?.data);
     return (
         <div className="max-w-7xl my-10 mx-auto p-1 md:p-0">
             <Title title="Popular Picks">Tempting Tastes</Title>
