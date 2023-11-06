@@ -17,7 +17,7 @@ const FoodCard = ({item}) => {
             <p>Available Quantity: <span className='font-medium'>{stock_quantity}</span></p>
             </div>
             <div className=''>
-                <Link to={`/all-item/${_id}`}>
+                <Link to={`/all-item/${_id}`} state={food_name}>
                 <button className='py-2 px-4 bg-primaryCol text-white font-medium hover:bg-darkSecondary transition-colors duration-200'>Details</button>
                 </Link>
             </div>

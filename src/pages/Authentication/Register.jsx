@@ -18,6 +18,17 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        if(password.length<6){
+            return toast.error("Password should have minimum 6 characters");
+          }
+          else if(!/[A-Z]/.test(password)){
+            return toast.error("Password should have atleats one capital letter");
+          }
+          else if(!/[!@#$%^&*]/.test(password)){
+            return toast.error("Password should have atleats one special character");
+          }
+
         singUp(email,password)
         .then((res)=> {
             const user = res.user;
