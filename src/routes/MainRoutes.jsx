@@ -9,6 +9,8 @@ import FoodDetail from "../pages/FoodDetail";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+import Order from "../pages/Order";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -46,7 +48,11 @@ const MainRoutes = createBrowserRouter([
             },
             {
                 path: '/all-item/:id',
-                element: <FoodDetail></FoodDetail>
+                element: <FoodDetail></FoodDetail> 
+            },
+            {
+                path: '/order/:id',
+                element: <PrivateRoute><Order></Order></PrivateRoute> 
             },
         ]
     }

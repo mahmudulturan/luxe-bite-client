@@ -7,8 +7,8 @@ const FoodCard = ({ item }) => {
         <div className='group  overflow-hidden text-center rounded-md'>
             <div className='w-full h-64 relative overflow-hidden'>
                 <img className='w-full group-hover:rotate-1 duration-200 h-full object-cover transition-transform transform group-hover:scale-105' src={"https://i.ibb.co/3470rxZ/31817.jpg"} alt={`image of ${food_name}`} />
-                <div className='absolute -top-96 group-hover:top-0 flex items-center justify-center w-full h-full bg-slate-600/20 transition-all duration-500'>
-                   <Link to={`/all-food-item/${_id}`}>
+                <div className='absolute -top-96 group-hover:top-0 flex items-center justify-center w-full h-full bg-slate-600/20 transition-colors duration-500'>
+                   <Link to={`/all-item/${_id}`}>
                     <button className='py-2 px-3 bg-primaryCol text-white font-semibold hover:bg-darkSecondary transition-colors ease-in-out duration-500'>Details</button>
                    </Link>
                 </div>

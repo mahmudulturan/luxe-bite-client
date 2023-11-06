@@ -1,10 +1,26 @@
 import logo from '../../assets/logo_light.png'
 import { Link, NavLink } from "react-router-dom";
 import { BiSolidUserCircle } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from 'react-hot-toast';
+
 
 
 const Navbar = () => {
-    const user = false;
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogout = ()=> {
+        logOut()
+        .then(()=> {
+            toast.success('Successfully LogOut!')
+
+        })
+        .catch(error=>{
+            toast.error(error.message)
+
+        })
+    }
 
     const routes = [
         { title: 'Home', path: '/' },
@@ -45,14 +61,21 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <BiSolidUserCircle className='w-full h-full'></BiSolidUserCircle>
+                                {
+                                 user?.photoURL?
+                                 <img src={user?.photoURL} alt={`image of ${user?.email}`} />
+                                 :
+
+                                 <BiSolidUserCircle className='w-full h-full'></BiSolidUserCircle>
+                                }
                             </div>
                         </label>
                         <div tabIndex={0} className="menu flex items-start gap-2 menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52">
+                            <h5 className='text-center font-medium'>{user?.displayName}</h5>
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>My Added Food Items</button>
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>Add A Food Items</button>
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>My ordered food items</button>
-                            <button className='bg-accentCol py-2 px-1 rounded-md text-white font-medium w-full'>LogOut</button>
+                            <button onClick={handleLogout} className='bg-accentCol py-2 px-1 rounded-md text-white font-medium w-full'>LogOut</button>
                         </div>
                     </div>
                     :
