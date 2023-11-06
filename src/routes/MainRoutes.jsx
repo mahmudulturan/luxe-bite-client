@@ -11,6 +11,7 @@ import Register from "../pages/Authentication/Register";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Order from "../pages/Order";
+import AddItem from "../pages/AddItem";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const MainRoutes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/add-item',
+                element: <AddItem></AddItem>
             },
             {
                 path: '/all-item/:id',

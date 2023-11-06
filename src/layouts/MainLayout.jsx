@@ -40,7 +40,6 @@ const MainLayout = () => {
         }
     },[pathname, state])
 
-    // console.log(location.pathname, location.state);
 
 
     return (
