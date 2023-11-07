@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Order from "../pages/Order";
 import AddItem from "../pages/AddItem";
 import MyFoodItems from "../pages/MyFoodItems";
+import MyOrderedItems from "../pages/MyOrderedItems";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const MainRoutes = createBrowserRouter([
             {
                 path: '/add-item',
                 element: <AddItem></AddItem>
+            },
+            {
+                path: '/my-ordered-items',
+                element: <MyOrderedItems></MyOrderedItems>
             },
             {
                 path: '/all-item/:id',

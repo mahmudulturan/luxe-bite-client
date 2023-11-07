@@ -78,7 +78,7 @@ const Navbar = () => {
                             <Link className='w-full' to="/add-item">
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>Add A Food Items</button>
                             </Link>
-                            <Link className='w-full'>
+                            <Link className='w-full' to="/my-ordered-items">
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>My ordered food items</button>
                             </Link>
                             <button onClick={handleLogout} className='bg-accentCol py-2 px-1 rounded-md text-white font-medium w-full'>LogOut</button>
