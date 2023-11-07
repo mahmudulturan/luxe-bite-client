@@ -14,6 +14,7 @@ import Order from "../pages/Order";
 import AddItem from "../pages/AddItem";
 import MyFoodItems from "../pages/MyFoodItems";
 import MyOrderedItems from "../pages/MyOrderedItems";
+import UpdateItem from "../pages/UpdateItem";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const MainRoutes = createBrowserRouter([
             {
                 path: '/add-item',
                 element: <AddItem></AddItem>
+            },
+            {
+                path: '/update-item/:id',
+                element: <UpdateItem></UpdateItem>
             },
             {
                 path: '/my-ordered-items',

@@ -60,7 +60,7 @@ const MyFoodItems = () => {
                                         <td>{item.stock_quantity}</td>
                                         <td>{item.sold}</td>
                                         <th>
-                                            <Link to='/update-item'>
+                                            <Link to={`/update-item/${item._id}`}>
                                             <button className="btn btn-ghost btn-xs">Update</button>
                                             </Link>
                                         </th>
