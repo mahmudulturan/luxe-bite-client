@@ -7,10 +7,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from 'react-hot-toast';
 import { updateProfile } from "firebase/auth";
+import useAxios from "../../hooks/useAxios";
 
 
 const Register = () => {
-    const {singUp} = useContext(AuthContext)
+    const {singUp, logOut} = useContext(AuthContext)
+    const axios = useAxios();
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -36,11 +38,17 @@ const Register = () => {
                 displayName: name,
                 photoURL: photo
             })
-            toast.success('Successfully Login!')
-        })
-        .catch(error=>{
-            toast.error(error.message)
-
+            .then(() => {
+                const userData = {name, email, photo}
+                axios.post('/users', userData)
+                .then(() => {
+                    toast.success('Successfully Registered!')
+                })
+                .catch(error => {
+                    logOut()
+                    toast.error(error.message)
+                })
+            })
         })
     }
     return (

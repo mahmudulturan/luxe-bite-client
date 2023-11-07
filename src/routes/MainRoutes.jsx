@@ -52,19 +52,19 @@ const MainRoutes = createBrowserRouter([
             },
             {
                 path: '/my-food-items',
-                element: <MyFoodItems></MyFoodItems>
+                element: <PrivateRoute><MyFoodItems></MyFoodItems></PrivateRoute>
             },
             {
                 path: '/add-item',
-                element: <AddItem></AddItem>
+                element: <PrivateRoute><AddItem></AddItem></PrivateRoute> 
             },
             {
                 path: '/update-item/:id',
-                element: <UpdateItem></UpdateItem>
+                element: <PrivateRoute><UpdateItem></UpdateItem></PrivateRoute> 
             },
             {
                 path: '/my-ordered-items',
-                element: <MyOrderedItems></MyOrderedItems>
+                element: <PrivateRoute><MyOrderedItems></MyOrderedItems></PrivateRoute> 
             },
             {
                 path: '/all-item/:id',
