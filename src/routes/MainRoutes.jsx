@@ -12,6 +12,7 @@ import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Order from "../pages/Order";
 import AddItem from "../pages/AddItem";
+import MyFoodItems from "../pages/MyFoodItems";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const MainRoutes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/my-food-items',
+                element: <MyFoodItems></MyFoodItems>
             },
             {
                 path: '/add-item',

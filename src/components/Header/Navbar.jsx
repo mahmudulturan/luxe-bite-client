@@ -72,7 +72,7 @@ const Navbar = () => {
                         </label>
                         <div tabIndex={0} className="menu flex items-start gap-2 menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52">
                             <h5 className='text-center font-medium'>{user?.displayName}</h5>
-                            <Link className='w-full'>
+                            <Link to="/my-food-items" className='w-full'>
                             <button className='bg-accentCol py-1 px-1 rounded-md text-white font-medium w-full'>My Added Food Items</button>
                             </Link>
                             <Link className='w-full' to="/add-item">
