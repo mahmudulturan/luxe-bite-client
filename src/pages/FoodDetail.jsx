@@ -23,7 +23,7 @@ const FoodDetail = () => {
                 <div className="text-xl space-y-1 my-2">
                 <p>Category: <span className="font-medium">{food_category}</span></p>
                 <p>Price: <span className="font-medium">{price}</span></p>
-                <p>Made By: <span className="font-medium">{made_by}</span> </p>
+                <p>Made By: <span className="font-medium">{made_by?.name || made_by}</span> </p>
                 <p>Food Origin: <span className="font-medium">{food_origin}</span></p>
                 </div>
                 <p className="max-w-3xl mx-auto my-2">{short_description}</p>

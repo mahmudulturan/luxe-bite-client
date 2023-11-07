@@ -1,12 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import Title from "../components/Shared/Title";
 import { AuthContext } from "../providers/AuthProvider";
+import useAxios from "../hooks/useAxios";
+import toast from "react-hot-toast";
 
 const AddItem = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [madeBy, setMadeBy] = useState("")
     const { user } = useContext(AuthContext)
+    const axios = useAxios();
     useEffect(()=> {
         setName(user?.displayName)
         setEmail(user?.email)
@@ -26,7 +29,15 @@ const AddItem = () => {
         const food_origin = form.food_origin.value;
         const short_description = form.short_description.value;
         const foodData = {food_name, food_category, food_img, price, stock_quantity, sold, made_by, food_origin, short_description}
-        console.log(foodData);
+        axios.post('/add-item',foodData)
+        .then(res=> {
+            if(res.data.acknowledged){
+                toast.success('Successfully Added!')
+            }
+        })
+        .catch(err=> {
+            toast.error(err.message)
+        })
 
     }
 
