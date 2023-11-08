@@ -34,6 +34,18 @@ const MainLayout = () => {
         else if(pathname == '/contact'){
             setTitle("Luxe Bite | Contact")
         }
+        else if(pathname == '/my-food-items'){
+            setTitle("Luxe Bite | My Food Item")
+        }
+        else if(pathname == '/add-item'){
+            setTitle("Luxe Bite | Add Item")
+        }
+        else if(pathname == '/update-item'){
+            setTitle("Luxe Bite | Update Item")
+        }
+        else if(pathname == '/my-ordered-items'){
+            setTitle("Luxe Bite | My Ordered Item")
+        }
         else{
             setTitle(`Luxe Bite | ${pathname.replace("/", " ")}`)
         }

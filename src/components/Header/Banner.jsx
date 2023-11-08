@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './banner.css'
 
 const Banner = () => {
@@ -9,7 +10,9 @@ const Banner = () => {
                     <div className="2xl:flex-1  max-w-sm 2xl:max-w-none">
                         <h4 className="text-white font-bold text-4xl md:text-6xl">Discover the Flavors of <br /> <span className="text-white text-5xl md:text-7xl drop-shadow-2xl shadow-white">Luxe Bite</span></h4>
                         <p className=" py-2 text-white/90">Your culinary adventure begins here at Luxe Bite. We're here to guide you through a world of exquisite flavors and unforgettable dining moments.</p>
+                        <Link to='/all-items'>
                         <button className='py-3 px-4 bg-primaryCol font-medium text-white hover:bg-white hover:text-textCol transition-all duration-200'>Explore Our Full Menu</button>
+                        </Link>
                     </div>
                     <div className="max-w-xs xl:max-w-lg md:max-w-md xl:flex-1">
                         <div className="rotate-image animate-spin animate-spin-slow  duration-200">

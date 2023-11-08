@@ -5,8 +5,10 @@ const FoodCard = ({item}) => {
     const {food_name, food_img, food_category, price, stock_quantity, _id} = item;
 
     return (
-        <div className="bg-secondaryCol/60 rounded-lg px-6 py-4">
-            <img src={"https://i.ibb.co/3470rxZ/31817.jpg" || food_img} className='w-96 h-52 object-cover' alt="" />
+        <div className="bg-secondaryCol/60 rounded-lg px-6 py-4 group">
+            <div>
+            <img src={food_img} className='w-96 h-52 object-cover transition-transform transform group-hover:scale-105 rounded-md group-hover:drop-shadow-lg' alt="" />
+            </div>
             <div className='flex items-center justify-between gap-6 my-5'>
             <div className='flex-1'>
             <h1 className='text-xl font-semibold'>{food_name}</h1>

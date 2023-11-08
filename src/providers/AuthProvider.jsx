@@ -52,17 +52,18 @@ const AuthProvider = ({children}) => {
 
             if(currentUser && userEmail){
                 axios.post('/jwt', usersLogin)
-                .then(res=> console.log(res))
+                // .then(res=> console.log(res))
+                // console.log(true)
                 // .catch(err=> console.log(err))
             }
             else if(!currentUser && userEmail){
                 axios.post('/delete-cookie', usersLogOut)
-                .then(res => console.log(res.data))
+                // .then(res => console.log(res.data))
                 // .catch(err => console.log(err))
             }
         })
         return () => unsubscribe()
-    },[userEmail])
+    },[user, userEmail])
     
     const authData = {
         user,

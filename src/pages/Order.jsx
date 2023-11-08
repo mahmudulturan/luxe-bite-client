@@ -21,7 +21,7 @@ const Order = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    const { food_name, food_img, price, stock_quantity, made_by, _id } = data.data;
+    const { food_name, food_img, price, stock_quantity, sold, made_by, _id } = data.data;
 
     const buyerName = user?.displayName;
     const buyerEmail = user?.email;
@@ -39,8 +39,10 @@ const Order = () => {
             return toast.error('Dont have enough quantity!')
         }
         const available_quantity = stock_quantity - purchase_quantity;
+        const newSoldQuantity = sold + purchase_quantity;
+        const updatedProductData = {available_quantity, newSoldQuantity}
         const purchaseData = { food_id: _id, food_name, food_img, price, purchase_quantity, buyerData: { buyerName, buyerEmail }, dateAndTime }
-        axios.post('/new-orders', {purchaseData, available_quantity})
+        axios.post('/new-orders', {purchaseData, updatedProductData})
         .then(res => {
             if(res.data.result.acknowledged){
                 toast.success('Order Placed!')
