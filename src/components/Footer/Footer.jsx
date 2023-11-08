@@ -31,10 +31,10 @@ const Footer = () => {
                 <div className='flex-1'>
                     <h3 className='font-medium text-2xl mb-3'>Opening Hours</h3>
                     <div className='space-y-1'>
-                        <h4 className='border-b'>Monday to Tuesday: 11:00 AM - 9:00 PM</h4>
-                        <h4 className='border-b'>Wednesday: Closed</h4>
-                        <h4 className='border-b'>Thursday to Friday: 11:00 AM - 10:00 PM</h4>
-                        <h4 className='border-b'>Saturday: 10:00 AM - 10:00 PM</h4>
+                        <h4 className=''>Monday to Tuesday: 11:00 AM - 9:00 PM</h4>
+                        <h4 className=''>Wednesday: Closed</h4>
+                        <h4 className=''>Thursday to Friday: 11:00 AM - 10:00 PM</h4>
+                        <h4 className=''>Saturday: 10:00 AM - 10:00 PM</h4>
                         <h4 className=''>Sunday: 10:00 AM - 8:00 PM</h4>
                     </div>
                 </div>

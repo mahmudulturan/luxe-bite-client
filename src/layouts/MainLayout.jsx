@@ -34,6 +34,9 @@ const MainLayout = () => {
         else if(pathname == '/contact'){
             setTitle("Luxe Bite | Contact")
         }
+        else{
+            setTitle(`Luxe Bite | ${pathname.replace("/", " ")}`)
+        }
 
         if (state) {
             setTitle(`Luxe Bite | ${state}`)

@@ -51,7 +51,7 @@ const MyOrderedItems = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {data.data.map(item => <tr key={item._id}>
+                                    {data?.data?.map(item => <tr key={item._id}>
                                         <td>
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
