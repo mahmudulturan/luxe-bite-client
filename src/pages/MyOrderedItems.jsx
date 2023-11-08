@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import Title from "../components/Shared/Title";
 import useAxios from "../hooks/useAxios";
 import { useContext } from "react";
@@ -10,25 +10,25 @@ const MyOrderedItems = () => {
     const { user } = useContext(AuthContext)
     const email = user?.email;
     const axios = useAxios();
+    const queryClient = useQueryClient()
 
-    const { data, isLoading, refetch } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["my-ordered-items", email], queryFn: async () => {
             const res = await axios.get(`/my-ordered-items?email=${email}`);
             return res;
         }
     })
-    const handleDelete = (id)=> {
-        axios.delete(`/delete-order/${id}`)
-        .then(res => {
-            if(res.data.deletedCount){
-                toast.success('Successfully Deleted!')
-                refetch(["my-ordered-items", email])
-            }
-        })
-        .catch(err => {
-            toast.error(err.message)
-        })
-    }
+
+    const {mutate} = useMutation({mutationKey:["my-ordered-items"], mutationFn:(deletedid)=> {
+       return axios.delete(`/delete-order/${deletedid}`)
+    }, onSuccess: ()=> {
+        toast.success('Successfully Deleted!')
+        queryClient.invalidateQueries({queryKey: ["my-ordered-items"]})
+    }, onError: ()=>{
+     toast.error("Delete Unsuccessfull")
+
+    }})
+
 
     return (
         <div className="max-w-7xl mx-auto pb-10">
@@ -69,7 +69,7 @@ const MyOrderedItems = () => {
                                         <td>{item.dateAndTime}</td>
                                         <td>{item.buyerData.buyerName}</td>
                                         <th>
-                                            <button onClick={()=> handleDelete(item._id)} className="btn btn-ghost btn-xs">Delete</button>
+                                            <button onClick={()=> mutate(item._id)} className="btn btn-ghost btn-xs">Delete</button>
                                         </th>
                                     </tr>)}
                                 </tbody>
