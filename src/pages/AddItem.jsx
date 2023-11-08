@@ -33,6 +33,7 @@ const AddItem = () => {
         .then(res=> {
             if(res.data.acknowledged){
                 toast.success('Successfully Added!')
+                form.reset()
             }
         })
         .catch(err=> {
