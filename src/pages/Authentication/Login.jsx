@@ -57,7 +57,7 @@ const Login = () => {
                         </div>
                     </div>
                 </form>
-                <p>Don't have any account? <Link className="text-primaryCol underline" to='/register'>Register Here</Link></p>
+                <p>Don't have any account? <Link state={location.state} className="text-primaryCol underline" to='/register'>Register Here</Link></p>
                 <Social></Social>
             </div>
             <div className="flex-1">

@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/animations/loginAnimation.json"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Title from "../../components/Shared/Title";
 import Social from "./Social";
 import { useContext } from "react";
@@ -10,8 +10,15 @@ import { updateProfile } from "firebase/auth";
 import useAxios from "../../hooks/useAxios";
 
 
+
+
 const Register = () => {
-    const {singUp, logOut} = useContext(AuthContext)
+    const {singUp, logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    
     const axios = useAxios();
     const handleRegister = (e) => {
         e.preventDefault();
@@ -43,6 +50,12 @@ const Register = () => {
                 axios.post('/users', userData)
                 .then(() => {
                     toast.success('Successfully Registered!')
+                    if (location.state) {
+                        navigate(location.state)
+                    }
+                    else {
+                        navigate('/')
+                    }
                 })
                 .catch(error => {
                     logOut()

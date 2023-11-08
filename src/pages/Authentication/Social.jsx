@@ -2,17 +2,28 @@ import { BsGoogle } from "react-icons/bs";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from 'react-hot-toast';
+import { useLocation, useNavigate } from "react-router-dom";
+
 
 
 
 const Social = () => {
     const {googleLogin} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
 
     const handleLogin = () => {
         googleLogin()
         .then(()=> {
             toast.success('Successfully Login!')
-
+            if (location.state) {
+                navigate(location.state)
+            }
+            else {
+                navigate('/')
+            }
         })
         .catch(error=>{
             toast.error(error.message)

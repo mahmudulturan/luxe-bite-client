@@ -30,7 +30,7 @@ const Navbar = () => {
         { title: 'Contact', path: '/contact' },
     ]
 
-    const navLinks = <div className='flex flex-col md:flex-row gap-6 font-montserrat font-semibold uppercase'>
+    const navLinks = <div className='flex flex-col lg:flex-row gap-6 font-montserrat font-semibold uppercase'>
         {
             routes.map((route, indx) => <NavLink key={indx} to={route.path} className={({ isActive }) => isActive ? "text-primaryCol transition-all duration-200" : "hover:text-primaryCol transition-all duration-200"
             }>{route.title}</NavLink>)
