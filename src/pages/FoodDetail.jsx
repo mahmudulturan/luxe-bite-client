@@ -16,7 +16,7 @@ const FoodDetail = () => {
     }
     const {food_name, food_img, food_category, price, made_by, food_origin, short_description, _id} = data.data;
     return (
-        <div className="max-w-7xl mx-auto mb-10 p-1 md:p-0"> 
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto mb-10 p-1 md:p-0"> 
             <div className="text-center">
                 <Title>{food_name}</Title>
                 <img src={food_img} className="md:w-1/2 h-96 object-cover rounded-md mx-auto" alt={`image of ${food_name}`} />

@@ -2,7 +2,7 @@ import logo1 from '../../assets/logo_dark.png'
 
 const Footer = () => {
     return (
-        <div className='bg-darkBackground text-white px-1 md:px-0'>
+        <div data-aos="fade-up" className='bg-darkBackground text-white px-1 md:px-0'>
             <footer className='flex flex-col md:flex-row max-w-7xl mx-auto py-6 gap-4'>
                 <div className='flex-1'>
                     <img className='md:w-5/12 object-cover mb-3' src={logo1} alt="logo fo luxe bite" />

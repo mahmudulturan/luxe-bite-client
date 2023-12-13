@@ -17,7 +17,7 @@ const About = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className="mb-10 max-w-7xl mx-auto p-1 md:p-0">
                 <Title title="Our Story">The Luxe Bite Experience</Title>
                 <div>

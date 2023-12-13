@@ -37,7 +37,7 @@ const Navbar = () => {
         }
     </div>
     return (
-        <div>
+        <div data-aos="fade-down">
             <div className="navbar bg-transparent max-w-7xl mx-auto py-4 items-center">
                 <div className="navbar-start">
                     <div className="dropdown">

@@ -17,7 +17,7 @@ const TopFood = () => {
         return <Loading></Loading>
     }
     return (
-        <div className="max-w-7xl my-10 mx-auto p-1 md:p-0">
+        <div data-aos="fade-down" className="max-w-7xl my-10 mx-auto p-1 md:p-0">
             <Title title="Popular Picks">Tempting Tastes</Title>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-4">
                 {/* cards will contain here */}

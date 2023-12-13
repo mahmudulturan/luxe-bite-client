@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <div>
+        <div data-aos="zoom-in">
             <h1>Contact</h1>
         </div>
     );

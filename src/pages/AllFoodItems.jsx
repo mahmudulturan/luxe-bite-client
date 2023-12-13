@@ -27,7 +27,7 @@ const AllFoodItems = () => {
     const totalButton = [...Array(pageCount || []).keys()]
 
     return (
-        <div className="max-w-7xl mx-auto p-1 md:p-0">
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto p-1 md:p-0">
             <Title title="Our Menu">Delicious Selections</Title>
             <div>
                 <div className="text-center md:text-right items-center">

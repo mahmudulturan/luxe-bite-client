@@ -19,7 +19,7 @@ const MyFoodItems = () => {
     })
 
     return (
-        <div className="max-w-7xl mx-auto pb-10">
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto pb-10">
             <Title title="My Added Food Items">Signature Dishes</Title>
             {
                 isLoading?

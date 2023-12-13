@@ -58,7 +58,7 @@ const Order = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto mb-10">
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto mb-10">
             <Title title={data.data.food_name}>Pick Your Flavors</Title>
             <div className="max-w-3xl mx-auto shadow-md shadow-secondaryCol px-4">
                 <h4 className="font-semibold text-xl text-center my-2">Order Summery</h4>

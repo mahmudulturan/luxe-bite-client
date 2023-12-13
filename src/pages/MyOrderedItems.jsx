@@ -31,7 +31,7 @@ const MyOrderedItems = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto pb-10">
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto pb-10">
             <Title title="My Ordered Food Items">Food Order Log</Title>
             {
                 isLoading?

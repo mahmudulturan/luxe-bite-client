@@ -56,7 +56,7 @@ const UpdateItem = () => {
 
     }
     return (
-        <div className="max-w-7xl mx-auto mb-10 p-1 md:p-0">
+        <div data-aos="zoom-in" className="max-w-7xl mx-auto mb-10 p-1 md:p-0">
             <Title title="Update Existing Item">Diverse Menu</Title>
             <div>
                 <form onSubmit={handleUpdate} className="grid grid-cols-1 md:grid-cols-2 gap-6">

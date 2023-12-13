@@ -12,7 +12,7 @@ const Blogs = () => {
         return res;
     }})
     return (
-        <div>
+        <div data-aos="zoom-in">
                 <Title title="Bite Blog">Savor Stories</Title>
                 {
                     isLoading?

@@ -4,8 +4,10 @@ import Header from "../components/Header/Header";
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-
+AOS.init();
 const MainLayout = () => {
     const location = useLocation();
     const [title, setTitle] = useState()

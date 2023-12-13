@@ -22,7 +22,7 @@ const Testimonial = () => {
 
     return (
         <div>
-            <div className="min-h-[60vh] my-10" style={{ backgroundImage: "url(https://i.ibb.co/njv1hPd/happy-waiter-serving-food-group-cheerful-friends-pub-1.jpg)" }}>
+            <div data-aos="fade-up" className="min-h-[60vh] my-10" style={{ backgroundImage: "url(https://i.ibb.co/njv1hPd/happy-waiter-serving-food-group-cheerful-friends-pub-1.jpg)" }}>
                 <div className="min-h-[60vh] w-full bg-primaryCol/80">
                     <div className="max-w-3xl mx-auto">
                         <Swiper
